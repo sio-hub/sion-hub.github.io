@@ -2,57 +2,60 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sio Dynamics</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sio Dynamics Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    body {
+    * {
+      box-sizing: border-box;
       margin: 0;
-      font-family: sans-serif;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
       background-color: #0d1117;
       color: #e6edf3;
     }
 
     header {
       background-color: #161b22;
-      padding: 1rem;
+      padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      border-bottom: 1px solid #30363d;
     }
 
     header h1 {
+      font-family: 'Orbitron', sans-serif;
       color: #58a6ff;
-      font-size: 1.2rem;
+      font-size: 1.5rem;
     }
 
     nav a {
       color: #e6edf3;
-      margin-left: 1rem;
+      margin-left: 1.5rem;
       text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #58a6ff;
     }
 
     .container {
-      max-width: 600px;
-      margin: 2rem auto;
-      padding: 1rem;
+      max-width: 700px;
+      margin: 3rem auto;
+      padding: 2rem;
       background-color: #161b22;
-      border-radius: 8px;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
     }
 
     h2 {
       color: #58a6ff;
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    li {
-      margin: 0.5rem 0;
-    }
-
-    a.link {
-      display: block;
-      background-color: #21262d;
-      padding: 0.5rem 1rem;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid #30363d;
+      padding-bot
