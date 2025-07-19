@@ -1,165 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Ms. Neary's Maths Game</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tech Links Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: sans-serif;
-      text-align: center;
-      margin-top: 30px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(4, 100px);
-      grid-gap: 10px;
-      justify-content: center;
-    }
-
-    .cell {
-      width: 100px;
-      height: 100px;
-      background-color: #3498db;
-      color: white;
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #f4f7fa;
+      color: #333;
       display: flex;
       justify-content: center;
       align-items: center;
-      cursor: pointer;
-      font-size: 20px;
-      position: relative;
-      user-select: none;
+      height: 100vh;
     }
 
-    .hidden {
-      background-color: #2c3e50;
+    .container {
+      max-width: 500px;
+      padding: 2rem;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      text-align: center;
     }
 
-    button {
-      margin-left: 10px;
-      padding: 5px 10px;
-      font-size: 14px;
+    h1 {
+      margin-bottom: 1.5rem;
+      font-size: 1.8rem;
+      color: #222;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    li {
+      margin: 0.5rem 0;
+    }
+
+    a {
+      display: block;
+      padding: 0.75rem 1rem;
+      background: #e6eef5;
+      color: #0057b8;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+
+    a:hover {
+      background: #d0e3f3;
     }
   </style>
 </head>
 <body>
-
-<h1>Ms. Neary's Maths Game</h1>
-<div>
-  <strong>Preview Time Left:</strong> <span id="timer">60</span> seconds
-  <button onclick="resetGame()">Reset Game</button>
-</div>
-<br>
-<div class="grid" id="grid"></div>
-
-<script>
-  const grid = document.getElementById('grid');
-  const operations = ['+', '-', 'x'];
-
-  let previewTime = 60;
-  let previewInterval, flipInterval;
-  let gameStarted = false;
-  const totalTiles = 16;
-
-  function generateSum() {
-    const a = Math.floor(Math.random() * 10);
-    const b = Math.floor(Math.random() * 10);
-    const op = operations[Math.floor(Math.random() * operations.length)];
-    let result;
-
-    switch (op) {
-      case '+': result = a + b; break;
-      case '-': result = a - b; break;
-      case 'x': result = a * b; break;
-    }
-
-    return { question: `${a} ${op} ${b}`, answer: result };
-  }
-
-  function createCell() {
-    const { question, answer } = generateSum();
-    const cell = document.createElement('div');
-    cell.className = 'cell hidden';
-    cell.dataset.question = question;
-    cell.dataset.answer = answer;
-    cell.dataset.state = 'hidden'; // hidden → question → answer
-
-    cell.addEventListener('click', () => {
-      if (!gameStarted) return;
-
-      const state = cell.dataset.state;
-
-      if (state === 'hidden') {
-        cell.textContent = cell.dataset.question;
-        cell.classList.remove('hidden');
-        cell.dataset.state = 'question';
-      } else if (state === 'question') {
-        cell.textContent = `= ${cell.dataset.answer}`;
-        cell.dataset.state = 'answer';
-      } else {
-        cell.textContent = '';
-        cell.classList.add('hidden');
-        cell.dataset.state = 'hidden';
-      }
-    });
-
-    return cell;
-  }
-
-  function initGrid() {
-    grid.innerHTML = '';
-    for (let i = 0; i < totalTiles; i++) {
-      const cell = createCell();
-      grid.appendChild(cell);
-    }
-  }
-
-  function updateTimer() {
-    document.getElementById('timer').textContent = previewTime;
-  }
-
-  function startPreviewPhase() {
-    const cells = Array.from(document.querySelectorAll('.cell'));
-
-    flipInterval = setInterval(() => {
-      const cell = cells[Math.floor(Math.random() * cells.length)];
-      if (cell.dataset.state !== 'hidden') return;
-
-      cell.textContent = cell.dataset.question;
-      cell.classList.remove('hidden');
-
-      setTimeout(() => {
-        if (cell.dataset.state === 'hidden') {
-          cell.textContent = '';
-          cell.classList.add('hidden');
-        }
-      }, 800);
-    }, 500);
-
-    previewInterval = setInterval(() => {
-      previewTime--;
-      updateTimer();
-      if (previewTime <= 0) {
-        clearInterval(previewInterval);
-        clearInterval(flipInterval);
-        gameStarted = true;
-        document.getElementById('timer').textContent = 'Preview ended';
-      }
-    }, 1000);
-  }
-
-  function resetGame() {
-    previewTime = 60;
-    gameStarted = false;
-    clearInterval(previewInterval);
-    clearInterval(flipInterval);
-    document.getElementById('timer').textContent = previewTime;
-    initGrid();
-    startPreviewPhase();
-  }
-
-  window.onload = resetGame;
-</script>
-
+  <div class="container">
+    <h1>My Tech Links</h1>
+    <ul>
+      <li><a href="https://github.com" target="_blank">Mathsgame</a></li>
+      <li><a href="https://stackoverflow.com" target="_blank">open1</a></li>
+      <li><a href="https://news.ycombinator.com" target="_blank">open2</a></li>
+      <li><a href="https://developer.mozilla.org" target="_blank">open3</a></li>
+    </ul>
+  </div>
 </body>
 </html>
