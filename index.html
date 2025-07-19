@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tech Links Dashboard</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sio Dynamics Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+   <link rel="icon" type="image/x-icon" href="favicon.ico"
   <style>
     * {
       box-sizing: border-box;
@@ -13,64 +14,112 @@
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background: #f4f7fa;
-      color: #333;
+      background: #0d1117;
+      color: #e6edf3;
+    }
+
+    header {
+      background-color: #161b22;
+      padding: 1rem 2rem;
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
-      height: 100vh;
+      border-bottom: 1px solid #30363d;
+    }
+
+    header h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.5rem;
+      margin: 0;
+      color: #58a6ff;
+    }
+
+    nav a {
+      color: #e6edf3;
+      margin-left: 1.5rem;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover {
+      color: #58a6ff;
     }
 
     .container {
-      max-width: 500px;
+      max-width: 700px;
+      margin: 3rem auto;
       padding: 2rem;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-      text-align: center;
+      background: #161b22;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
     }
 
-    h1 {
-      margin-bottom: 1.5rem;
-      font-size: 1.8rem;
-      color: #222;
+    h2 {
+      font-size: 1.6rem;
+      color: #58a6ff;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid #30363d;
+      padding-bottom: 0.5rem;
     }
 
     ul {
       list-style-type: none;
       padding: 0;
-      margin: 0;
     }
 
     li {
-      margin: 0.5rem 0;
+      margin: 1rem 0;
     }
 
-    a {
+    a.link-btn {
       display: block;
       padding: 0.75rem 1rem;
-      background: #e6eef5;
-      color: #0057b8;
+      background: #21262d;
+      color: #e6edf3;
+      border-left: 4px solid #58a6ff;
+      border-radius: 6px;
       text-decoration: none;
-      border-radius: 8px;
-      font-weight: 600;
-      transition: background 0.2s;
+      transition: background 0.2s ease;
     }
 
-    a:hover {
-      background: #d0e3f3;
+    a.link-btn:hover {
+      background: #30363d;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav {
+        margin-top: 0.5rem;
+      }
     }
   </style>
 </head>
 <body>
+
+  <header>
+    <h1>Sio Dynamics</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
   <div class="container">
-    <h1>My Tech Links</h1>
+    <h2>Quick Links</h2>
     <ul>
-      <li><a href="https://sio-hub.github.io/sion-hub.github.io//mathsgame.html" target="_blank">Mathsgame</a></li>
-      <li><a href="https://stackoverflow.com" target="_blank">open1</a></li>
-      <li><a href="https://news.ycombinator.com" target="_blank">open2</a></li>
-      <li><a href="https://developer.mozilla.org" target="_blank">open3</a></li>
+      <li><a class="link-btn" href="https://github.com" target="_blank">GitHub</a></li>
+      <li><a class="link-btn" href="https://stackoverflow.com" target="_blank">Stack Overflow</a></li>
+      <li><a class="link-btn" href="https://news.ycombinator.com" target="_blank">Hacker News</a></li>
+      <li><a class="link-btn" href="https://developer.mozilla.org" target="_blank">MDN Web Docs</a></li>
     </ul>
   </div>
+
 </body>
 </html>
+
