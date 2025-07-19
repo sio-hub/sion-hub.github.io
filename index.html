@@ -2,60 +2,60 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sio Dynamics Dashboard</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome</title>
   <style>
-    * {
-      box-sizing: border-box;
+    body {
       margin: 0;
+      font-family: sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    h1 {
+      margin-bottom: 2rem;
+      color: #222;
+    }
+
+    ul {
+      list-style: none;
       padding: 0;
     }
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #0d1117;
-      color: #e6edf3;
+    li {
+      margin: 1rem 0;
     }
 
-    header {
-      background-color: #161b22;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #30363d;
-    }
-
-    header h1 {
-      font-family: 'Orbitron', sans-serif;
-      color: #58a6ff;
-      font-size: 1.5rem;
-    }
-
-    nav a {
-      color: #e6edf3;
-      margin-left: 1.5rem;
+    a {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background-color: #007acc;
+      color: white;
       text-decoration: none;
-      font-weight: 600;
-      transition: color 0.3s ease;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
     }
 
-    nav a:hover {
-      color: #58a6ff;
+    a:hover {
+      background-color: #005fa3;
     }
+  </style>
+</head>
+<body>
 
-    .container {
-      max-width: 700px;
-      margin: 3rem auto;
-      padding: 2rem;
-      background-color: #161b22;
-      border-radius: 10px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-    }
+  <h1>Welcome to My Site</h1>
 
-    h2 {
-      color: #58a6ff;
-      margin-bottom: 1rem;
-      border-bottom: 1px solid #30363d;
-      padding-bot
+  <ul>
+    <li><a href="about.html">About</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+
+</body>
+</html>
